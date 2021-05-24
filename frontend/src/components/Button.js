@@ -1,6 +1,6 @@
 function Button(props) {
     return (
-        <a href={props.link}><button className="btn btn-primary" style={{ margin: "5px" }}>{props.text}</button></a>
+        <a href={props.link}><button className={ props.class } style={{ margin: "5px" }}>{props.text}</button></a>
     )
 }
 

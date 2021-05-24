@@ -34,7 +34,7 @@ function Register(props) {
                 value={password} onChange={(e) => (setPassword(e.target.value))} required=""/>
             <input type="text" className="form-control" name="email" placeholder="E-mail"
                 value={email} onChange={(e) => (setEmail(e.target.value))} required=""/>
-            <Button text="Registracija" />
+            <Button text="Registracija" class="btn btn-primary"/>
         </form>
     )
 }

@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var commentsController = require('../controllers/commentsController.js');
+var multer = require('multer');
+var upload = multer({ dest: 'public/images/' });
 
 /*
  * GET
@@ -15,7 +17,7 @@ router.get('/:id', commentsController.show);
 /*
  * POST
  */
-router.post('/', commentsController.create);
+router.post('/', upload.single('slika'), commentsController.create);
 
 /*
  * PUT

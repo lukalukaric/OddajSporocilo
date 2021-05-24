@@ -29,7 +29,7 @@ module.exports = {
     show: function (req, res) {
         var id = req.params.id;
 
-        CommentsModel.findOne({_id: id}, function (err, comments) {
+        CommentsModel.find({ idMessage: id }, function (err, comments) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when getting comments.',

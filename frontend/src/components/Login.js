@@ -32,7 +32,7 @@ function Login(props) {
         <form className="form-group" onSubmit={Login}>
             <input type="text" className="form-control" name="username" placeholder="Uporabnisko ime" value={username} onChange={(e) => { setUsername(e.target.value) }} required=""/>
             <input type="password" className="form-control" name="password" placeholder="Geslo" value={password} onChange={(e) => { setPassword(e.target.value) }} required="" />
-            <Button text="Prijavi" />
+            <Button text="Prijavi" class="btn btn-primary"/>
         </form>
     )
 }

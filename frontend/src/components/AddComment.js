@@ -2,9 +2,10 @@
 import Button from "./Button";
 import { useParams } from 'react-router-dom';
 
-function AddMessage(props) {
+function AddComment(props) {
     const [comment, setComment] = useState('');
     const [username, setUsername] = useState('');
+    const [messageId, setMessageID] = useState('');
     const { id } = useParams();
     
     function onSubmit(e) {
@@ -18,22 +19,27 @@ function AddMessage(props) {
             alert("prijavi se!");
             return;
         }
+        if (!messageId) {
+            alert("napaka!");
+            return;
+        }
 
         //Pokliči onAdd v App componentu
-        props.onAddComment({ comment, username, id});
+        props.onAdd({ comment, username, messageId});
 
         //Počisti podatke v obrazcu
         setComment("");
         setUsername("");
+        setMessageID("");
     }
 
     return (
         <form className="form-group" onSubmit={onSubmit}>
             <input type="text" className="form-control" name="komentar" placeholder="Komentar"
-                value={comment} onChange={(e) => { setComment(e.target.value); setUsername(localStorage.getItem("username")) }} />
-            <Button text="Komentiraj" />
+                value={comment} onChange={(e) => { setComment(e.target.value); setMessageID(id); setUsername(localStorage.getItem("username")) }} />
+            <Button text="Komentiraj" class="btn btn-primary"/>
         </form>
     )
 }
 
-export default AddMessage;
+export default AddComment;

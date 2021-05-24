@@ -1,7 +1,15 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\backend",
+    "\\backend\\controllers",
+    "\\backend\\models",
+    "\\backend\\routes",
+    "\\backend\\views",
+    "\\frontend",
+    "\\frontend\\src",
+    "\\frontend\\src\\components"
   ],
-  "SelectedNode": "\\frontend",
+  "SelectedNode": "\\frontend\\src\\components\\Message.js",
   "PreviewInSolutionExplorer": false
 }

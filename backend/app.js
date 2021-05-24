@@ -16,6 +16,8 @@ var usersRouter = require('./routes/userRoutes');
 var photosRouter = require('./routes/photoRoutes');
 var messageRouter = require('./routes/messageRoutes');
 var commentRouter = require('./routes/commentsRoutes');
+var likesFromRouter = require('./routes/LikesFromRoutes');
+var dislikesFromRouter = require('./routes/DislikesFromRoutes');
 
 var app = express();
 
@@ -61,6 +63,8 @@ app.use('/users', usersRouter);
 app.use('/photos', photosRouter);
 app.use('/message', messageRouter);
 app.use('/comments', commentRouter);
+app.use('/likesFrom', likesFromRouter);
+app.use('/dislikesFrom', dislikesFromRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

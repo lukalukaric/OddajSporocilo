@@ -31,7 +31,7 @@ function AddMessage(props) {
             <input type="text" className="form-control" name="ime" placeholder="Ime slike" value={name} onChange={(e) => { setName(e.target.value) }} />
             <label>Izberi sliko</label>
             <input type="file" id="file" onChange={(e) => { setFile(e.target.files[0]) }} />
-            <Button text="Naloži" />
+            <Button text="Naloži" class="btn btn-primary"/>
         </form>
     )
 }

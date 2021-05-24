@@ -53,7 +53,8 @@ module.exports = {
         var message = new MessageModel({
 			text : req.body.name,
             path: 'images/' + req.file.filename,
-			likes : req.body.likes,
+            likes: req.body.likes,
+            dislikes: req.body.dislikes,
 			views : req.body.views,
             time: req.body.time,
             author: req.body.author
@@ -90,13 +91,13 @@ module.exports = {
                     message: 'No such message'
                 });
             }
-
-            message.text = req.body.text ? req.body.text : message.text;
-			message.path = req.body.path ? req.body.path : message.path;
-			message.likes = req.body.likes ? req.body.likes : message.likes;
-			message.views = req.body.views ? req.body.views : message.views;
-            message.time = req.body.time ? req.body.time : message.time;
-            message.author = req.body.author ? req.body.author : message.author
+            if (req.body.likes == -1) {
+                message.likes += 1;
+            }
+            if (req.body.dislikes == -1) {
+                message.dislikes += 1;
+            }
+            
 			
             message.save(function (err, message) {
                 if (err) {
